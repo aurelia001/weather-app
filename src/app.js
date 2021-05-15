@@ -34,16 +34,20 @@ function searchCity(city) {
 }
 
 function showStats(response) {
-  document.querySelector("h1").innerHTML = response.data.name;
-  let temperture = Math.round(response.data.main.temp);
-  document.querySelector("#current-temperture").innerHTML = temperture;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `${response.data.main.humidity}%`;
-  let windspeed = Math.round(response.data.wind.speed);
-  document.querySelector("#windspeed").innerHTML = `${windspeed} km/h`;
-  document.querySelector("#weather-description").innerHTML =
-    response.data.weather[0].description;
+  if (response === undefined) {
+    searchCity("Paris");
+  } else {
+    document.querySelector("h1").innerHTML = response.data.name;
+    let temperture = Math.round(response.data.main.temp);
+    document.querySelector("#current-temperture").innerHTML = temperture;
+    document.querySelector(
+      "#humidity"
+    ).innerHTML = `${response.data.main.humidity}%`;
+    let windspeed = Math.round(response.data.wind.speed);
+    document.querySelector("#windspeed").innerHTML = `${windspeed} km/h`;
+    document.querySelector("#weather-description").innerHTML =
+      response.data.weather[0].description;
+  }
 }
 searchCity("Paris");
 

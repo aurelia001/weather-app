@@ -17,6 +17,8 @@ input[type="text"] {
 input[type="submit"],
 input[type="text"] {
   line-height: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 input[type="submit"] {
   margin-left: 30px;
@@ -27,8 +29,6 @@ input[type="submit"] {
   border: 2px solid;
   border-radius: 4px;
   transition: 0.2s;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 input[type="submit"]:hover {
   background-color: #bbbbbb;
@@ -42,12 +42,12 @@ h1 {
   font-size: 25px;
   margin-bottom: 10px;
   position: relative;
-  left: 25px;
+  left: 40px;
 }
 .temperture,
 .weekday {
   position: relative;
-  left: 20px;
+  left: 35px;
   font-size: 23px;
 }
 .weekday {
@@ -59,6 +59,7 @@ h1 {
 .wind {
   margin-bottom: 30px;
 }
+
 .fa-sun {
   font-size: 40px;
   position: relative;
