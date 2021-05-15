@@ -1,0 +1,74 @@
+body {
+  font-family: "PT Mono", monospace;
+}
+.wrapper {
+  border: 2px solid;
+  margin: 20px;
+  margin-left: 260px;
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 700px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+input[type="text"] {
+  width: 60%;
+}
+input[type="submit"],
+input[type="text"] {
+  line-height: 30px;
+}
+input[type="submit"] {
+  margin-left: 30px;
+  margin-bottom: 20px;
+  width: 80px;
+  cursor: pointer;
+  font-weight: 600;
+  border: 2px solid;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+input[type="submit"]:hover {
+  background-color: #bbbbbb;
+}
+
+h1 {
+  text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  margin-bottom: 20px;
+}
+.fa-cloud-rain {
+  font-size: 25px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 25px;
+}
+.temperture,
+.weekday {
+  position: relative;
+  left: 20px;
+  font-size: 23px;
+}
+.weekday {
+  margin-bottom: 10px;
+}
+.temperture-today {
+  font-size: 25px;
+}
+.wind {
+  margin-bottom: 30px;
+}
+.fa-sun {
+  font-size: 40px;
+  position: relative;
+  top: 8px;
+}
+.col {
+  font-size: 19px;
+}
+.temperture-today {
+  position: relative;
+  top: 5px;
+}
+.description {
+  text-transform: capitalize;
+}
