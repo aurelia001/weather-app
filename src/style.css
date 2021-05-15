@@ -58,13 +58,14 @@ h1 {
 }
 .wind {
   margin-bottom: 30px;
+  position: relative;
+  left: 30px;
+}
+.humidity {
+  position: relative;
+  left: 30px;
 }
 
-.fa-sun {
-  font-size: 40px;
-  position: relative;
-  top: 8px;
-}
 .col {
   font-size: 19px;
 }
@@ -81,4 +82,8 @@ h1 {
 }
 .refrence-link {
   text-decoration: none;
+}
+img {
+  width: 75px;
+  height: 75px;
 }

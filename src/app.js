@@ -34,20 +34,25 @@ function searchCity(city) {
 }
 
 function showStats(response) {
-  if (response === undefined) {
-    searchCity("Paris");
-  } else {
-    document.querySelector("h1").innerHTML = response.data.name;
-    let temperture = Math.round(response.data.main.temp);
-    document.querySelector("#current-temperture").innerHTML = temperture;
-    document.querySelector(
-      "#humidity"
-    ).innerHTML = `${response.data.main.humidity}%`;
-    let windspeed = Math.round(response.data.wind.speed);
-    document.querySelector("#windspeed").innerHTML = `${windspeed} km/h`;
-    document.querySelector("#weather-description").innerHTML =
-      response.data.weather[0].description;
-  }
+  document.querySelector("h1").innerHTML = response.data.name;
+  let temperture = Math.round(response.data.main.temp);
+  document.querySelector("#current-temperture").innerHTML = temperture;
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `${response.data.main.humidity}%`;
+  let windspeed = Math.round(response.data.wind.speed);
+  document.querySelector("#windspeed").innerHTML = `${windspeed} km/h`;
+  document.querySelector("#weather-description").innerHTML =
+    response.data.weather[0].description;
+  document
+    .querySelector("#current-icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#current-icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 searchCity("Paris");
 
