@@ -6,7 +6,7 @@ body {
   margin: 20px;
   margin-left: 260px;
   margin-top: 50px;
-  padding: 25px;
+  padding: 25px 0 25px 25px;
   max-width: 700px;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -86,4 +86,6 @@ h1 {
 img {
   width: 75px;
   height: 75px;
+  position: relative;
+  left: 1px;
 }
