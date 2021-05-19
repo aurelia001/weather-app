@@ -33,6 +33,11 @@ function searchCity(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showStats);
 }
 
+function getForecast(coordinates) {
+  apiKey = "73c8674456bc85afaf789af71afc1080";
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
+  console.log(axios.get(apiUrl).then(showStats));
+}
 function showStats(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemperture = response.data.main.temp;
@@ -54,6 +59,7 @@ function showStats(response) {
   document
     .querySelector("#current-icon")
     .setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 
 function searchLocation(position) {
@@ -110,8 +116,7 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
-displayForecast();
 searchCity("Paris");
+displayForecast();
