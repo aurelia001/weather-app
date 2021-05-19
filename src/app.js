@@ -113,5 +113,5 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
-searchCity("Paris");
 displayForecast();
+searchCity("Paris");
