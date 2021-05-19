@@ -90,4 +90,28 @@ celsiusLink.addEventListener("click", converToCelsius);
 
 let celsiusTemperture = null;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+            <div class="weekday">${day}</div>
+            <div class="weather-state">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+            <div class="temperture">10°| 18°</div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 searchCity("Paris");
+displayForecast();

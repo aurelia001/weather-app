@@ -6,7 +6,7 @@ body {
   margin: 20px;
   margin-left: 260px;
   margin-top: 50px;
-  padding: 25px 25px;
+  padding: 25px 15px 25px 15px;
   max-width: 700px;
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -44,20 +44,23 @@ h1 {
   position: relative;
   left: 40px;
 }
-.temperture,
+.temperture {
+  font-size: 17px;
+  position: relative;
+  left: 20px;
+}
+
 .weekday {
   position: relative;
   left: 35px;
-  font-size: 23px;
-}
-.weekday {
   margin-bottom: 15px;
+  font-size: 23px;
 }
 .temperture-today {
   font-size: 25px;
 }
 .wind {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   position: relative;
   left: 30px;
 }
