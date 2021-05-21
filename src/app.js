@@ -69,26 +69,6 @@ function getCurrentLocation(event) {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperture = (celsiusTemperture * 9) / 5 + 32;
-  document.querySelector("#current-temperture").innerHTML =
-    Math.round(fahrenheitTemperture);
-}
-function converToCelsius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  document.querySelector("#current-temperture").innerHTML =
-    Math.round(celsiusTemperture);
-}
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", converToCelsius);
-
 let celsiusTemperture = null;
 
 function getForecast(coordinates) {
