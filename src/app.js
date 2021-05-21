@@ -98,14 +98,13 @@ function getForecast(coordinates) {
 }
 
 function displayForecast() {
-  function displayForecast() {
-    let forecastElement = document.querySelector("#forecast");
-    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-    let forecastHTML = `<div class="row">`;
-    days.forEach(function (day) {
-      forecastHTML =
-        forecastHTML +
-        `
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
       <div class="col">
             <div class="weekday">${day}</div>
             <div class="weather-state">
@@ -114,10 +113,10 @@ function displayForecast() {
             <div class="temperture">10°| 18°</div>
    </div>
   `;
-    });
-  }
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 searchCity("Paris");
 displayForecast();
