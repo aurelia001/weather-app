@@ -97,18 +97,32 @@ function getForecast(coordinates) {
   console.log(axios.get(apiUrl).then(displayForecast));
 }
 
+function formatDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
   let forecast = response.data.daily.slice(3);
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row forecast">`;
   forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
       <div class="col">
-            <div class="weekday">${day}</div>
+            <div class="weekday">${formatDate(forecastDay.dt)}</div>
             <div class="weather-state">
-              <i class="fas fa-cloud-rain"></i>
+               <img class="forecast-state"
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        />
             </div>
             <div class="forecast-temperture"><span class="max-temperture"> ${Math.round(
               forecastDay.temp.max
@@ -122,4 +136,4 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 
-searchCity("Paris");
+searchCity("Tokyo");

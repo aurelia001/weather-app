@@ -38,16 +38,15 @@ h1 {
   text-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   margin-bottom: 20px;
 }
-.fa-cloud-rain {
+.forecast-state {
   font-size: 25px;
-  margin-bottom: 10px;
   position: relative;
-  left: 40px;
+  left: 10px;
 }
 .forecast-temperture {
   font-size: 17px;
   position: relative;
-  left: 20px;
+  left: 25px;
 }
 .min-temperture {
   opacity: 0.6;
@@ -55,7 +54,6 @@ h1 {
 .weekday {
   position: relative;
   left: 35px;
-  margin-bottom: 15px;
   font-size: 23px;
 }
 .temperture-today {
