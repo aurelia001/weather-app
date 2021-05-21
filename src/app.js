@@ -33,11 +33,6 @@ function searchCity(city) {
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showStats);
 }
 
-function getForecast(coordinates) {
-  apiKey = "73c8674456bc85afaf789af71afc1080";
-  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
-  console.log(axios.get(apiUrl).then(showStats));
-}
 function showStats(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemperture = response.data.main.temp;
@@ -96,27 +91,33 @@ celsiusLink.addEventListener("click", converToCelsius);
 
 let celsiusTemperture = null;
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+function getForecast(coordinates) {
+  apiKey = "73c8674456bc85afaf789af71afc1080";
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
+  console.log(axios.get(apiUrl).then(displayForecast));
+}
 
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+function displayForecast() {
+  function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+    let forecastHTML = `<div class="row">`;
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML +
+        `
       <div class="col">
             <div class="weekday">${day}</div>
             <div class="weather-state">
               <i class="fas fa-cloud-rain"></i>
             </div>
             <div class="temperture">10°| 18°</div>
+   </div>
   `;
-  });
-
+    });
+  }
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 searchCity("Paris");
 displayForecast();
