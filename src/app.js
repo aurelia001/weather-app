@@ -97,11 +97,11 @@ function getForecast(coordinates) {
   console.log(axios.get(apiUrl).then(displayForecast));
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
@@ -119,4 +119,3 @@ function displayForecast() {
 }
 
 searchCity("Paris");
-displayForecast();
