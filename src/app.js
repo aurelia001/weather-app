@@ -93,7 +93,7 @@ let celsiusTemperture = null;
 
 function getForecast(coordinates) {
   apiKey = "73c8674456bc85afaf789af71afc1080";
-  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
   console.log(axios.get(apiUrl).then(displayForecast));
 }
 
@@ -110,7 +110,7 @@ function displayForecast() {
             <div class="weather-state">
               <i class="fas fa-cloud-rain"></i>
             </div>
-            <div class="temperture">10°| 18°</div>
+            <div class="forecast-temperture"><span class="max-temperture">10°</span><span class="min-temperture"> 18°</span></div>
    </div>
   `;
   });

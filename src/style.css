@@ -44,12 +44,14 @@ h1 {
   position: relative;
   left: 40px;
 }
-.temperture {
+.forecast-temperture {
   font-size: 17px;
   position: relative;
   left: 20px;
 }
-
+.min-temperture {
+  opacity: 0.6;
+}
 .weekday {
   position: relative;
   left: 35px;
