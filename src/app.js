@@ -98,10 +98,10 @@ function getForecast(coordinates) {
 }
 
 function displayForecast(response) {
-  let forecast = response.data.daily;
+  let forecast = response.data.daily.slice(3);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
@@ -110,7 +110,11 @@ function displayForecast(response) {
             <div class="weather-state">
               <i class="fas fa-cloud-rain"></i>
             </div>
-            <div class="forecast-temperture"><span class="max-temperture">10°</span><span class="min-temperture"> 18°</span></div>
+            <div class="forecast-temperture"><span class="max-temperture"> ${Math.round(
+              forecastDay.temp.max
+            )}°</span><span class="min-temperture"> ${Math.round(
+        forecastDay.temp.min
+      )}°</span></div>
    </div>
   `;
   });
